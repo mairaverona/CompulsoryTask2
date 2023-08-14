@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block content %}
+<head>
+  <title>Login</title>
+</head>
+<body>
+  <h1>Login as User</h1>
+  {% if error_message %}
+  <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+  {% endif %}
+  <form action="{% url 'bookClub:user_login' %}" method="post">
+    {% csrf_token %}
+    <label>Username</label>
+    <input type="text" name="username" placeholder="User" required />
+    <br /><br />
+    <label>Password</label>
+    <input type="password" name="password" required />
+    <br /><br />
+    <input type="submit" value="Login" />
+  </form>
+  <p>
+    Don't have an account?
+    <a href="{% url 'bookClub:user_register' %}">Register here</a>
+  </p>
+</body>
+{% endblock %}

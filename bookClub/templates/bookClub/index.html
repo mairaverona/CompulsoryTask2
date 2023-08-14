@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<div class="col-lg-12 col-md-12">
+  <h1>Welcome to BookClub</h1>
+  <p>
+    BookClub is a community of book lovers where you can discover new books,
+    join discussions, and share your reading experiences with others.
+  </p>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/register/">Register</a></li>
+      <li><a href="/login/">Login</a></li>
+    </ul>
+    {% if user.is_authenticated %}
+    <li><a href="/currently_reading/">Currently Reading</a></li>
+    <li><a href="/next_read/">Next Read</a></li>
+    <li><a href="/past_weeks/">Past Weeks</a></li>
+    {% endif %}
+  </nav>
+</div>
+{% endblock %}

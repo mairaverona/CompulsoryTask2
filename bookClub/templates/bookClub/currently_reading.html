@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+<head>
+  <title>Currently reading</title>
+</head>
+<body>
+  <h2>Currently reading</h2>
+  <h3>The book we are currently reading is:</h3>
+  <p>{{book.title}} by {{book.author}}</p>
+</body>
+{% endblock %}

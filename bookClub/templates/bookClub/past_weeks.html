@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %}
+<head>
+  <title>Past Books</title>
+</head>
+<body>
+  <h2>Past books</h2>
+  {% for book in books %}
+  <p>{{book.title}} by {{book.author}} was {{book.status}}</p>
+  {% empty %}
+  <h1>Go read you illiterate child</h1>
+  {% endfor %}
+</body>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<head>
+  <title>You've succesfully registered!</title>
+</head>
+<body>
+  <p>
+    You can now login at:
+    <a href="{% url 'bookClub:user_login' %}">Login</a>
+  </p>
+</body>
+{% endblock %}

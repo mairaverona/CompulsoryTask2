@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <form action="{% url 'bookClub:user_register' %}" method="post">
+    {% csrf_token %}
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">Register</div>
+        <div class="panel-body">
+          {% if error_message %}
+          <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+          {% endif %}
+            <label>Username</label>
+            <input type="text" name="username" placeholder="User" required />
+            <br /><br />
+            <label>Password</label>
+            <input type="password" name="password" required />
+            <br /><br />
+                        <label>Email</label>
+            <input type="text" name="email" placeholder="Email" required />
+            <br /><br />
+                        <label>First Name</label>
+            <input type="text" name="first_name" placeholder="first_name" required />
+            <br /><br />
+            <input type="submit" value="Register" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
