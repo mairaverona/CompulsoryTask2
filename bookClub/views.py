@@ -125,6 +125,18 @@ def next_read(request):
 
 @login_required
 def past_weeks(request):
+    """
+    Display the books read in previous months for the logged-in user
+
+    Retrieves information about books read in previous months and renders the
+    'past_weeks.html' template
+
+    Parameters:
+    request (HttpRequest): The request object
+
+    Returns:
+    HttpResponse: The response containing the past books information
+    """
     # Logic to fetch and display the books read in previous months for the logged-in user
     past_books = [
         {
