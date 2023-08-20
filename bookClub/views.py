@@ -82,6 +82,18 @@ def successful_reg(request):
 
 @login_required
 def currently_reading(request):
+    """
+    Display the currently reading book for the logged-in user.
+
+    Retrieves information about the currently reading book and renders the
+    'currently_reading.html' template.
+
+    Parameters:
+    request (HttpRequest): The request object.
+
+    Returns:
+    HttpResponse: The response containing the currently reading book information.
+    """
     currently_reading_book = {
         'title': 'Harry Potter and the Prisoner of Azkaban',
         'author': 'J. K. Rowling',
