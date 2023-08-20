@@ -11,6 +11,22 @@ def index(request):
     return render(request, 'bookClub/index.html')
 
 def user_login(request):
+    """
+    Handle user login.
+
+    If the request method is POST, this function attempts to authenticate the user
+    using the provided username and password. If successful, the user is logged in
+    and redirected to the 'currently_reading' view. If authentication fails, an error
+    message is displayed on the login page.
+
+    If the request method is not POST, the login page is displayed
+
+    Parameters:
+    request (HttpRequest): The request object
+
+    Returns:
+    HttpResponse: The response after handling the login attempt
+    """
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -66,7 +82,6 @@ def successful_reg(request):
 
 @login_required
 def currently_reading(request):
-    # Logic to fetch and display the currently reading book for the logged-in user
     currently_reading_book = {
         'title': 'Harry Potter and the Prisoner of Azkaban',
         'author': 'J. K. Rowling',
