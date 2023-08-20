@@ -83,16 +83,16 @@ def successful_reg(request):
 @login_required
 def currently_reading(request):
     """
-    Display the currently reading book for the logged-in user.
+    Display the currently reading book for the logged-in user
 
     Retrieves information about the currently reading book and renders the
-    'currently_reading.html' template.
+    'currently_reading.html' template
 
     Parameters:
-    request (HttpRequest): The request object.
+    request (HttpRequest): The request object
 
     Returns:
-    HttpResponse: The response containing the currently reading book information.
+    HttpResponse: The response containing the currently reading book information
     """
     currently_reading_book = {
         'title': 'Harry Potter and the Prisoner of Azkaban',
@@ -103,6 +103,18 @@ def currently_reading(request):
 
 @login_required
 def next_read(request):
+    """
+    Display the next read book for the logged-in user
+
+    Retrieves information about the next read book(s) and renders the
+    'next_read.html' template
+
+    Parameters:
+    request (HttpRequest): The request object
+
+    Returns:
+    HttpResponse: The response containing the next read book information
+    """
     # Logic to fetch and display the next read book(s) for the logged-in user
     next_read_book = {
         'title': 'Harry Potter and the Goblet of Fire',
